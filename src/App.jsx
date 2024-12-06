@@ -9,7 +9,8 @@ function App() {
 
    async function getData() {
       try {
-         const response = await fetch('http://127.0.0.1:4000/api/data');
+         //const response = await fetch('http://127.0.0.1:4000/api/data');
+         const response = await fetch('http://134.185.104.172:4000/api/data');
          if (!response.ok) {
             throw new Error('데이터 가져오는데 실패했습니다.');
          }
@@ -28,7 +29,8 @@ function App() {
    async function postData(newItem) {
       console.log('==========', newItem);
       try {
-         const response = await fetch('http://127.0.0.1:4000/api/data', {
+         //const response = await fetch('http://127.0.0.1:4000/api/data', {
+         const response = await fetch('http://134.185.104.172:4000/api/data', {
             method: 'POST', // HTTP 메서드 설정
             headers: {
                'Content-Type': 'application/json', // 전송 데이터 형식 지정
