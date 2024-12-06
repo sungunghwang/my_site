@@ -10,7 +10,8 @@ function App() {
    async function getData() {
       try {
          //const response = await fetch('http://127.0.0.1:4000/api/data');
-         const response = await fetch('http://134.185.104.172:4000/api/data');
+         //const response = await fetch('http://134.185.104.172:4000/api/data', {    _redirects 파일로 네트리파이 프록시 설정을 이용한다면.. 이렇게  http:// ~~ 사용하면  안되고 아래처러 /api/data 이렇게 사용해야한다.
+         const response = await fetch('/api/data');
          if (!response.ok) {
             throw new Error('데이터 가져오는데 실패했습니다.');
          }
@@ -30,7 +31,8 @@ function App() {
       console.log('==========', newItem);
       try {
          //const response = await fetch('http://127.0.0.1:4000/api/data', {
-         const response = await fetch('http://134.185.104.172:4000/api/data', {
+         //const response = await fetch('http://134.185.104.172:4000/api/data', {    _redirects 파일로 네트리파이 프록시 설정을 이용한다면.. 이렇게  http:// ~~ 사용하면  안되고 아래처러 /api/data 이렇게 사용해야한다.
+         const response = await fetch('/api/data', {
             method: 'POST', // HTTP 메서드 설정
             headers: {
                'Content-Type': 'application/json', // 전송 데이터 형식 지정
